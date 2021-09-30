@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:bookstore_flutter/data/model/member/member.dart';
 import 'package:bookstore_flutter/presentation/member/member_view_model.dart';
 import 'package:flutter/material.dart';
@@ -36,13 +38,11 @@ class _MemberListScreenState extends State<MemberListScreen> {
             children: [
               Text('Member List'),
               ElevatedButton(
-                  onPressed: () async{
-                    final status = await Navigator.pushNamed(context, '/add-member');
-                    if(status=='done'){
-                      setState(() {
-                        _getListMember();
-                      });
-                    }
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/add-member')
+                        .then((value) => setState(() {
+                          _getListMember();
+                    }));
                   },
                   child: Text('register'),
               ),
