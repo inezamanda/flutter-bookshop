@@ -33,4 +33,17 @@ class ApiHelper {
       throw Exception('Connection failure');
     }
   }
+
+  Future<dynamic> deleteData(String path) async{
+    try{
+      Response response = await _dio.delete(path);
+      if(response.statusCode == 200 || response.statusCode == 202 || response.statusCode == 204){
+        return response.data;
+      } else {
+        throw Exception('Failed to delete data');
+      }
+    } catch(e) {
+      throw Exception('Connection failure');
+    }
+  }
 }

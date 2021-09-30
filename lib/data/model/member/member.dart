@@ -4,13 +4,15 @@ class Member{
   final String lastName;
   final String email;
   final String password;
+  final int? status;
 
   Member({
     this.id,
     required this.firstName,
     required this.lastName,
     required this.email,
-    required this.password
+    required this.password,
+    this.status
   });
 
   Map<String, dynamic> toMap() => {
@@ -18,7 +20,8 @@ class Member{
     'firstName' : firstName,
     'lastName' : lastName,
     'email' : email,
-    'password' : password
+    'password' : password,
+    'status' : status,
   };
 
   Member.fromMap(Map<String, dynamic> map)
@@ -26,6 +29,6 @@ class Member{
         firstName = map['firstName'],
         lastName = map['lastName'],
         email = map['email'],
-        password = map['password'];
-
+        password = map['password'],
+        status = map['status'];
 }

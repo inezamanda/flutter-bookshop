@@ -58,18 +58,23 @@ class _MemberListScreenState extends State<MemberListScreen> {
                                     child: ListTile(
                                       leading: Icon(Icons.perm_identity, size: 40.0,),
                                       title: Text(listMember[index].firstName),
+                                      trailing: IconButton(icon: Icon(Icons.delete_forever), onPressed: (){
+                                        setState(() {
+                                          widget.memberViewModel.deleteMember(index);
+                                        });
+                                        })
+                                      ),
                                     )
-                                )
+                                  ]
+                                ),
+                                Divider(height: 5.0, color: Colors.cyan,)
                               ],
-                            ),
-                            Divider(height: 5.0, color: Colors.cyan,)
-                          ],
-                        );
-                      },
-                        itemCount: listMember.length,
-                      ),
+                            );
+                          },
+                          itemCount: listMember.length,
+                      )
                     ),
-                  )
+                  ),
               )
             ],
           ),
