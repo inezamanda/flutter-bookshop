@@ -79,7 +79,8 @@ class _MemberFormScreenState extends State<MemberFormScreen> {
                                     firstName: memberFirstName.text,
                                     lastName: memberLastName.text,
                                     email: memberEmail.text,
-                                    password: memberPassword.text
+                                    password: memberPassword.text,
+                                    status: 0
                                 ));
                               });
                               Navigator.pop(context, 'done');

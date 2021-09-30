@@ -60,7 +60,7 @@ class _MemberListScreenState extends State<MemberListScreen> {
                                       title: Text(listMember[index].firstName),
                                       trailing: IconButton(icon: Icon(Icons.delete_forever), onPressed: (){
                                         setState(() {
-                                          widget.memberViewModel.deleteMember(index);
+                                          widget.memberViewModel.deleteMember(listMember[index].id);
                                         });
                                         })
                                       ),

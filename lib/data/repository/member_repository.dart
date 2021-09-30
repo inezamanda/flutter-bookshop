@@ -16,7 +16,8 @@ class MemberRepository {
   }
 
   Future<Member> deleteProduct(int id)async{
-    final response = await _apiHelper.deleteData('/member/${id}/1');
+    final response = await _apiHelper.deleteData('/member/$id/1');
+    // print(id);
     return Member.fromMap(response);
   }
 }

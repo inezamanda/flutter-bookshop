@@ -16,7 +16,9 @@ class MemberViewModel {
   }
 
   deleteMember(int id)async {
+    print(id);
     final deleteMemberFromList = await _memberRepository.deleteProduct(id);
+
     print(deleteMemberFromList);
   }
 }
